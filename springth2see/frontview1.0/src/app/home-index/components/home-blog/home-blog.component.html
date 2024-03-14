@@ -1,0 +1,62 @@
+<div class="row" style="width: 95% !important; margin: 15px auto !important;">
+
+<div class="col-lg-9 col-md-6 col-sm-12 mb-3">
+  <div class="d-flex justify-content-between mb-3 px-3">
+    <h5 class="fw-normal font-monospace align-items-center" style="
+  font-family: 'Montserrat', sans-serif !important; font-size: 1.5em !important; ">News
+    </h5> 
+
+    <div class="btn-group" >
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Categories
+      </button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let itemC of listCatego"><button class="dropdown-item" type="button" (click)="listByCatego(itemC.id)">{{itemC.name}}</button></li>
+      </ul>
+    </div>
+
+
+  </div>
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let item of listPostsFilter">
+    <div class="slide">
+      <div class="card" >
+        <div class="card-img" style="height: 10rem; overflow: hidden;">
+          <img src="http://localhost:9000/images/{{item.image}}" class="img-fluid"
+                  style="object-fit: cover; width: 100%; height: 100%;">
+        </div>
+        <div class="card-body text-start" >
+          <div class="d-flex justify-content-between align-items-center"
+            style="margin-top: 0 !important; margin-bottom: 4px !important;">
+            <span style="font-size: 13px;" class="text-left"><i class="fa-solid fa-at"></i> {{user.username}} <i
+                class="fa-solid fa-circle"></i> 1d</span>
+          </div>
+          <a [routerLink]="['/post/'+item.id]"
+            style="text-align:left !important; color: #000; font-weight:lighter !important;">{{item.brief}}</a>
+
+          <div class="d-flex flex-row justify-content-start col-12 m-auto">
+            <button class="fa-regular fa-heart"
+        style="font-size: 1.2rem !important; text-align: left !important; margin: 5px !important; border:none !important; background: none !important;"
+        (click)="toggleFavorite(item.id)">
+</button>
+
+
+
+            <a href="#" class="fa-solid fa-eye"
+              style="font-size: 1.2rem !important; text-align:left !important; color: #585e5c; margin: 5px !important;"></a>
+            <a href="#" class="fa-solid fa-share"
+              style="font-size: 1.2rem !important; text-align:left !important; color: #585e5c; margin: 5px !important;"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</owl-carousel-o>
+</div>
+<ul class="list-group listP col-lg-3 col-md-3 col-sm-12 mt-5 px-3 pt-3">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let itemF of listPosts">
+      <a href="#">{{itemF.brief}}</a>
+      <span class="badge bg-dark rounded-pill">43</span>
+    </li>
+  </ul>
+  </div>

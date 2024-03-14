@@ -1,0 +1,146 @@
+
+.section-1{
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 8em;
+
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols),1fr);
+    grid-auto-rows: var(--row-height);
+    gap:var(--gap);
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em !important;
+    font-family: 'Montserrat', sans-serif;
+}
+.section-headerD{
+    border-radius: 15px;
+    background-color: rgba(white, white, black, 0.1);
+}
+
+.section-header i {
+    margin-right: 5px; /* Ajusta el margen según sea necesario */
+}
+
+.section-1 > .child{
+    width:100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    overflow: hidden;
+    
+}
+
+.child-grid-col-2{
+    grid-column: span 2;
+}
+
+.child-grid-row-2{
+    grid-row: span 2;
+}
+
+.child-grid-row-1{
+    grid-row: span 1;
+}
+
+.carousel-item img {
+    width: 100%; /* Utilizamos el 100% del ancho del contenedor */
+    height: auto; /* Mantenemos la proporción de aspecto original */
+    max-width: 100%; /* Establecemos el ancho máximo para evitar que las imágenes se agranden */
+    max-height: 400px; /* Establecemos la altura máxima deseada para las imágenes */
+  }
+
+  .post{
+    position: relative !important;
+}
+
+.post > .container_1{
+    position: absolute !important;
+    bottom: 0px;
+    margin: auto;
+    padding-top: 1em !important;
+    background-color: #021525fd;
+    color: #fff;
+    opacity: 0.9;
+    height: 50% !important;
+    text-align: left !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.post > .container_2{
+    position: absolute !important;
+    bottom: 0px;
+    margin: auto;
+    padding-top: 1.5em !important;
+    background-color: #1b0202d5;
+    color: #fff;
+    opacity: 0.9;
+    height: 100% !important;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: auto !important;
+    
+}
+
+.container_1 h3, .container_2 h3{
+    font-size: 1.1em !important;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container_1 p, .container_2 p{
+    font-size: 0.9em !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.post {
+    overflow: hidden;
+    margin: 0;
+}
+
+
+.img-cs {
+    overflow: hidden;
+    height: 20em !important;
+}
+
+.img-cs img{
+    min-height: 100% !important;
+    min-width: 100% !important;
+}
+
+@media screen and (max-width: 1024px){
+    .section-1{
+        --num-cols: 2;
+    }
+
+    .child-2-grid-12{
+        grid-column: span 4;
+    }
+
+}
+
+@media screen and (max-width: 767px){
+    .child-grid-row-2r{
+        grid-row: span 1;
+    }
+
+    .child-2-grid-12r{
+        grid-column: span 4;
+    }
+}

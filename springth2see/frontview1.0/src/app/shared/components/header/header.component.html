@@ -1,0 +1,229 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light shadow-none">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" routerLink="/">
+        <img src="../../../../assets/imagenes/logoV2.jpg" height="50" alt="ven2see Logo" loading="lazy" />
+      </a>
+
+      <!-- Toggle button -->
+      <div class="navbar-toggle w-50 d-flex justify-content-end d-md-block d-lg-none">
+        <div class="d-flex align-items-center justify-content-end" *ngIf="authService.getToken()==null" style="width: 100% !important;">
+          <div style="width: 100% !important; margin: auto !important; ">
+            <a class="bg-none border-none d-flex justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 3px !important; font-weight: bold !important; color: #00263b !important;">
+              Login
+            </a>
+            <div class="dropdown-menu" style="margin-top: 0rem !important;">
+              <form #form="ngForm" (ngSubmit)="login(form)">
+                <div class="modal-header text-center mt-3">
+                  <h4 class="modal-title w-100 font-weight-bold mb-3">Sign in</h4>
+                  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button> -->
+                </div>
+                <div class="modal-body mx-3 border-0">
+                  <div class="input-group flex-nowrap mb-4 input-border-white">
+                    <i class="fas fa-user prefix grey-text input-group-text border-0"></i>
+                    <input type="text" id="form3b" name="username" (ngModel)="creds.username" class="form-control validate border-0" placeholder="Username">
+                  </div>
+          
+                  <div class="input-group flex-nowrap mb-4">
+                    <i class="fas fa-envelope prefix grey-text input-group-text border-0"></i>
+                    <input type="password" id="form2b"  name="password" (ngModel)="creds.password" class="form-control validate border-0" placeholder="Password">
+                  </div>
+                  
+                  <!-- <button class="btn btn-indigo w-100 mb-3">Sign in</button> -->
+                  <input type="submit" class="btn btn-block w-100 mb-3" value="Sign in"
+                style="background-color: #00263b !important; color: white !important;" />
+                  <div *ngIf="errorMessage" class="alert alert-danger">
+                    {{ errorMessage }}
+                  </div>
+                  <p class="mt-3" style="font-size: 15px !important;">Don't have an account? <a routerLink="/sign-up">Sign up</a></p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin: 0px !important;"><path fill="#00263b" fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,144C640,128,800,96,960,96C1120,96,1280,128,1360,144L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+              </form>
+          </div>
+          </div>
+          
+      </div>
+      
+      <button type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      </div>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Catalog</a>
+          </li>
+        </ul>
+
+
+        <!-- Left links -->
+
+  <div class="d-flex align-items-center justify-content-end d-none d-lg-flex" *ngIf="authService.getToken()==null" style="width: 43% !important;">
+          <div style="width: 50% !important; position: relative !important; display: flex !important; justify-content: flex-end !important; ">
+            <a class="bg-none border-none d-flex justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 7px !important; font-weight: bold !important; color: #00263b !important;">
+              Login
+            </a>
+            <div class="dropdown-menu" style="top: 3.5rem !important; left: 1.5rem !important;">
+              <form #form="ngForm" (ngSubmit)="login(form)">
+                <div class="modal-header text-center mt-3">
+                  <h4 class="modal-title w-100 font-weight-bold mb-3">Sign in</h4>
+                  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button> -->
+                </div>
+                <div class="modal-body mx-3 border-0">
+                  <div class="input-group flex-nowrap mb-4 input-border-white">
+                    <i class="fas fa-user prefix grey-text input-group-text border-0"></i>
+                    <input type="text" id="form3a" name="username" (ngModel)="creds.username" class="form-control validate border-0" placeholder="Username">
+                  </div>
+          
+                  <div class="input-group flex-nowrap mb-4">
+                    <i class="fas fa-envelope prefix grey-text input-group-text border-0"></i>
+                    <input type="password" id="form2a"  name="password" (ngModel)="creds.password" class="form-control validate border-0" placeholder="Password">
+                  </div>
+                  
+                  <!-- <button class="btn btn-indigo w-100 mb-3">Sign in</button> -->
+                  <input type="submit" class="btn btn-block w-100 mb-3" value="Sign in"
+                style="background-color: #00263b !important; color: white !important;" />
+                  <div *ngIf="errorMessage" class="alert alert-danger">
+                    {{ errorMessage }}
+                  </div>
+                  <p class="mt-3" style="font-size: 15px !important;">Don't have an account? <a routerLink="/sign-up">Sign up</a></p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin: 0px !important;"><path fill="#00263b" fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,144C640,128,800,96,960,96C1120,96,1280,128,1360,144L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+              </form>
+          </div>
+          </div>
+
+          <a routerLink="/sign-up" class="btn me-3" style="background-color: #00263b !important; color: white !important;">
+            Sign up
+          </a>
+          
+   </div>
+        <div class="d-flex align-items-center" *ngIf="authService.getToken()!=null">
+          <!-- Icon -->
+          <a class="text-reset me-3" href="#">
+            
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge rounded-pill badge-notification bg-danger">{{this.cantItems}}</span>
+          </a>
+
+          <!-- Notifications -->
+          <div class="dropdown">
+            <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item btn-link" href="#">Some news</a>
+              </li>
+              <li>
+                <a class="dropdown-item btn-link" href="#">Another news</a>
+              </li>
+              <li>
+                <a class="dropdown-item btn-link" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Avatar -->
+          <div class="dropdown" style="z-index:999999999">
+            <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+                alt="Black and White Portrait of a Man" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+              <li>
+                <a class="dropdown-item" href="#">My profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" data-mdb-toggle="modal" data-mdb-target="#exampleModal3" (click)="newPost()">New
+                   Post</a>
+              </li>
+              <li hasRole="admin">
+                <a class="dropdown-item" routerLink="/app-control">App Control</a>
+              </li>
+              <li>
+              <li>
+                <a class="dropdown-item">Favorite</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Settings</a>
+              </li>
+              <li>
+                <a class="dropdown-item btn" (click)="this.logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+ 
+</header>
+
+  <!-- Modal Post-->
+  <div class="modal top fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-mdb-backdrop="true" data-mdb-keyboard="true">
+    <div class="modal-dialog modal-lg ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <form [formGroup]="formPost">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title"  formControlName="title">
+          </div>
+          <div class="mb-3">
+            <label for="brief" class="form-label">Brief</label>
+            <input type="text" class="form-control" id="brief" name="brief" formControlName="brief" maxlength="50">
+          </div>
+
+          <div class="mb-3">
+            <label for="file" class="form-label">Image</label>
+            <input type="file" class="form-control" id="file" name="file"  (change)="onFileSelected($event)" #fileUpload />
+          </div>
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="exampleCombobox" #selector (change)="onCategorySelected(selector.value)" name="category">
+              <option selected *ngFor="let item of options" [value]="item.id">{{ item.name }}</option>
+            </select>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Write the content" id="floatingTextarea" formControlName="content"  style="z-index:99999999;"></textarea>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" (click)="save()">Share</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 

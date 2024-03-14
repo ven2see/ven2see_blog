@@ -1,0 +1,11 @@
+i{
+    margin:auto;
+    font-size: 8rem;
+    color: rgb(12, 143, 12);
+    padding: 3px;
+}
+
+.modal-body{
+    margin: auto;
+    text-align: center;
+}

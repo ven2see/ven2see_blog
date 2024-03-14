@@ -1,0 +1,24 @@
+/* .slide {
+    text-align: center;
+    padding: 12px;
+} */
+
+.listP{
+    max-height: 20em !important;
+    overflow-y: scroll !important;
+}
+
+.listP::-webkit-scrollbar {
+    width: 12px;
+    padding-top: 1rem !important;               /* width of the entire scrollbar */
+  }
+  
+  .listP::-webkit-scrollbar-track {
+    background: #fff;        /* color of the tracking area */
+  }
+  
+  .listP::-webkit-scrollbar-thumb {
+    background-color: rgb(5, 22, 34);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid white;  /* creates padding around scroll thumb */
+  }
